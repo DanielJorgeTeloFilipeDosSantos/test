@@ -60,6 +60,6 @@ gulp.task("server:watch", function() {
 gulp.task("default", gulp.series("sass", "js", "server"), function(done) {
   devMode = true;
   gulp.watch(["./server"], ["server"]);
-  gulp.watch(["./src/js/**/*.js"], ["js"]);
-  gulp.watch(["./src/templates/**/*.html"], ["html"]);
+  gulp.watch("./src/**/*.js", ["js"]);
+  gulp.watch("./src/**/*.scss", ["sass"]);
 });

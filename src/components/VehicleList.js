@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getData } from "../api";
-import CarCard from "./Card";
+import Card from "./Card";
 
 export default class VehicleList extends Component {
   constructor(props) {
@@ -19,14 +19,32 @@ export default class VehicleList extends Component {
     });
   }
 
-  //   parse(){
-  // 	const obj = JSON.parse(this.state.data);
-  //   }
+  //   async componentDidMount() {
+//     getData(data => {
+// 		const data2 = JSON.parse(data)
+// 		const Array = []
+// 		data2.vehicles.map((res=>{
+// 			getDataById(res.id,data=>{
+// 				const obj1 = 
+// 					JSON.parse(data)
+// 				  const obj2 = {
+// 					res
+// 				  }
+// 				  const obj3=Object.assign({},obj1, obj2);
+// 				Array.push(obj3)
+// 			})
+// 		})
+//       this.setState({
+// 		data: Array
+// 	})
+// 	})	
+//   }
+
 
   mapCarComponent() {
     return this.state.data.vehicles.map(carData => (
       <div>
-        <CarCard data={carData} />
+        <Card data={carData} />
       </div>
     ));
   }
@@ -34,7 +52,7 @@ export default class VehicleList extends Component {
   mapCarTabletComponent() {
     return this.state.data.vehicles.map(carData => (
       <div style={{ float: "left", width: "50%", background: "white" }}>
-        <CarCard data={carData} />
+        <Card data={carData} />
       </div>
     ));
   }
@@ -46,7 +64,7 @@ export default class VehicleList extends Component {
       return (
         <div>
           <div>
-            <h1>CarCard</h1>
+            <h1>Card</h1>
             <div
               style={{
                 display: "flex",

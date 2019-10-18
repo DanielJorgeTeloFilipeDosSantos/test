@@ -1,25 +1,52 @@
 import React, { Component } from "react";
-import Card from "react-bootstrap/Card";
+import {getDataById} from '../api'
 
 export class Desktop extends Component {
+  constructor(){
+    super();
+    this.state={
+    dataById:null
+    }
+    };
+    // componentDidMount() {
+		// 	getDataById(this.props.data.id,data=>{
+    //     this.setState({
+    //       dataById: JSON.parse(data)
+    //     })
+    //   })
+    // }
+
+    componentDidMount() {
+      getDataById(this.props.data.id,data => {
+        this.setState({
+          dataById: JSON.parse(data)
+        });
+      });
+    }
+
+
   render() {
-    console.log(this.props);
-    return (
-      <div>
-        {/* <img src={this.props.data.media[0].url} alt="Logo" />
+    console.log("inside this props data", this.props);
+    console.log("inside this props data", this.state.dataById);
+    if(this.state.dataById){
 
-        <h2>{this.props.data.media[0].url}</h2>
-        <h3>{this.props.data.id}</h3>
-        <h3>{this.props.data.id}</h3> */}
-
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={"." + this.props.data.media[0].url} />
-          <Card.Body>
-            <Card.Title>{this.props.data.id}</Card.Title>
-          </Card.Body>
-        </Card>
-      </div>
-    );
+      return (
+        <div>
+          <div id="carImg" style={{ width: "18rem" }}>
+            {/* {this.putImageAsBackGround()} */}
+            {/* <img src={fpace} alt="Logo" /> */}
+            <div style={{margin:'3vh',color:'#6495ED',textAlign:'center'}}>
+              <h4 style={{borderTop: '5px solid #6495ED',borderBottom:'5px solid #6495ED'}}>Vehicle Name</h4>
+            </div>
+            <div>
+              <p style={{color:'#6495ED',textAlign:'center'}}>{this.state.dataById.price}</p>
+              <p style={{color:'#6495ED',textAlign:'center'}}>{this.state.dataById.description}</p>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    return <div>loading..</div>
   }
 }
 
