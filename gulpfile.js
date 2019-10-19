@@ -57,7 +57,7 @@ gulp.task("server:watch", function() {
 
 //deprecated version v4
 
-gulp.task("default", gulp.series("sass", "js", "server"), function(done) {
+gulp.task("default", gulp.series("sass", "js", "server", "server:watch", "js:watch","sass:watch" ), function(done) {
   devMode = true;
   gulp.watch(["./server"], ["server"]);
   gulp.watch("./src/**/*.js", ["js"]);

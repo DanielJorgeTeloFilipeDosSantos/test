@@ -1,48 +1,54 @@
-$bg-colour: #ccc;
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+$bg-colour: white;
 
 body {
   background-color: $bg-colour;
+  font-family: "Roboto", sans-serif;
 }
 
+.divOnHover:hover {
+	background-color: #F8F8F8;
+}
 
 //   background-image: url("https://cnet2.cbsistatic.com/img/QLti68l9sc0YoPJOEXmJ_fzRCE0=/980x551/2019/02/26/42db1274-87b0-492c-817d-739fde306250/2020-jaguar-xe-24.jpg");
 
-
 .imgBk {
-	background-image: url("https://cnet2.cbsistatic.com/img/QLti68l9sc0YoPJOEXmJ_fzRCE0=/980x551/2019/02/26/42db1274-87b0-492c-817d-739fde306250/2020-jaguar-xe-24.jpg");
-	width: 90%;
-	height: 170px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	//   background-color: blue;
-  }
-
-
+	// background-image: url("https://cnet2.cbsistatic.com/img/QLti68l9sc0YoPJOEXmJ_fzRCE0=/980x551/2019/02/26/42db1274-87b0-492c-817d-739fde306250/2020-jaguar-xe-24.jpg");
+  // background-image: url('/images/xe_k17.jpg');
+  width: 100%;
+  height: 170px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  //   background-color: blue;
+}
 
 .column {
-	float: left;
-	width: 25%;
-  }
+  float: left;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
 
-  .row:after {
-	content: "";
-	display: table;
-	clear: both;
-  }
-  
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-  @media screen and (max-width: 992px) {
-	.column {
-	  width: 50%;
-	}
+@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+    display: flex;
+    justify-content: center;
   }
-  
+}
 
-  @media screen and (max-width: 600px) {
-	.column {
-	  width: 100%;
-	}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
-
-  
+}
