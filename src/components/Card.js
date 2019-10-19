@@ -85,7 +85,7 @@ export class Desktop extends Component {
     if (this.state.dataById) {
       return (
         <div>
-          <div id="carImg" style={{ width: "18rem" }}>
+          <div id="carImg" style={{ width: "18rem", height: "45vh" }}>
             {/* {this.putImageAsBackGround()} */}
             {/* <img src={xe} alt="Logo" /> */}
             {/* {this.browserifyLoadImg()} */}

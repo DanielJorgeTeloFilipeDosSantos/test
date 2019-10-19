@@ -18,7 +18,7 @@ export default class VehicleList extends Component {
       });
     });
   }
-
+  
   //   async componentDidMount() {
 //     getData(data => {
 // 		const data2 = JSON.parse(data)
@@ -43,15 +43,7 @@ export default class VehicleList extends Component {
 
   mapCarComponent() {
     return this.state.data.vehicles.map(carData => (
-      <div>
-        <Card data={carData} />
-      </div>
-    ));
-  }
-
-  mapCarTabletComponent() {
-    return this.state.data.vehicles.map(carData => (
-      <div style={{ float: "left", width: "50%", background: "white" }}>
+		<div className="column" style={{backgroundColor:'white'}}>
         <Card data={carData} />
       </div>
     ));
@@ -63,43 +55,19 @@ export default class VehicleList extends Component {
       console.log(this.state.data);
       return (
         <div>
-          <div>
-            <h1>Card</h1>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                backgroundColor: "white",
-                width: "100%"
-              }}
-            >
-              {this.mapCarComponent()}
-            </div>
-          </div>
+			<div className="row">
+				{this.mapCarComponent()}
+			</div>
 
-          <div>
-            <h1>Mobile</h1>
-            <div
-              style={{
-                display: "block",
-                backgroundColor: "white",
-                width: "100%"
-              }}
-            >
-              {this.mapCarComponent()}
-            </div>
-          </div>
 
-          <h1>Tablet </h1>
-          <div>
-            <div
-              style={{
-                width: "100%"
-              }}
-            >
-              {this.mapCarTabletComponent()}
-            </div>
-          </div>
+
+
+
+
+
+
+
+
         </div>
       );
     }
