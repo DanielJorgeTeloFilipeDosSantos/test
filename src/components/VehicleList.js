@@ -19,26 +19,6 @@ export default class VehicleList extends Component {
     });
   }
 
-  //   async componentDidMount() {
-  //     getData(data => {
-  // 		const data2 = JSON.parse(data)
-  // 		const Array = []
-  // 		data2.vehicles.map((res=>{
-  // 			getDataById(res.id,data=>{
-  // 				const obj1 =
-  // 					JSON.parse(data)
-  // 				  const obj2 = {
-  // 					res
-  // 				  }
-  // 				  const obj3=Object.assign({},obj1, obj2);
-  // 				Array.push(obj3)
-  // 			})
-  // 		})
-  //       this.setState({
-  // 		data: Array
-  // 	})
-  // 	})
-  //   }
 
   mapCarComponent() {
     return this.state.data.vehicles.map(carData => (
@@ -49,9 +29,17 @@ export default class VehicleList extends Component {
   }
 
   render() {
+    const spinnerPath = '/images/loading.gif'
+    const loadingStyles={
+      width: '20%',
+      height: '50px',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundImage: "url(" +  spinnerPath  + ")"
+    };
+
     if (this.state.data) {
-      console.log(this.state.data.vehicles.media);
-      console.log(this.state.data);
       return (
         <div>
           <div className="row">{this.mapCarComponent()}</div>
@@ -59,6 +47,6 @@ export default class VehicleList extends Component {
       );
     }
 
-    return <h1>Loading...</h1>;
+    return <div style={loadingStyles}></div>;
   }
 }

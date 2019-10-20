@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { getDataById } from "../api";
-// import bk from "../../images/bk.jpg";
-// import "../style.scss";
 
 export class Desktop extends Component {
   constructor() {
@@ -21,6 +19,7 @@ export class Desktop extends Component {
 
   render() {
     const path = this.props.data.media[0].url;
+    const spinnerPath = '/images/loading.gif'
     const imageStyles={
       width: '100%',
       height: '170px',
@@ -29,7 +28,14 @@ export class Desktop extends Component {
       backgroundPosition: 'center',
       backgroundImage: "url(" +  path  + ")"
     }
-    console.log("inside this props data", this.props.data.media[0].url);
+    const loadingStyles={
+      width: '20%',
+      height: '50px',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundImage: "url(" +  spinnerPath  + ")"
+    }
     if (this.state.dataById) {
       return (
         <div className="divOnHover">
@@ -45,7 +51,7 @@ export class Desktop extends Component {
                   borderBottom: "5px solid #282828"
                 }}
               >
-                Vehicle Nameee
+                Vehicle Namee
               </h4>
             </div>
             <div>
@@ -60,7 +66,7 @@ export class Desktop extends Component {
         </div>
       );
     }
-    return <div>loading...</div>;
+    return <div style={loadingStyles}></div>;
   }
 }
 
