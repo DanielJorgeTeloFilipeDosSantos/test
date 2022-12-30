@@ -33,7 +33,7 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-develop-server": "^0.5.2",
-    "gulp-mocha": "^7.0.2",
+    "gulp-mocha": "^8.0.0",
     "gulp-sass": "4.0.2",
     "hbs": "^4.0.6",
     "jsdom": "^15.2.0",
